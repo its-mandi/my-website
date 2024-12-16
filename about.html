@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Mandi Tech</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-image: url('/static/picture3.webp');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffcc00; /* Yellow */
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Subtitle Links (like About, Contact) */
+        nav a {
+            color: #9ACD32; /* Green-Yellow */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro, .history, .vision, .team {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black for section background */
+        }
+
+        /* Layout for sections */
+        .text {
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        /* Section Titles */
+        h2 {
+            font-size: 2.5rem;
+            color: #ffcc00; /* Yellow */
+        }
+
+        h3 {
+            color: #ff5733; /* Red */
+            font-size: 1.8rem;
+        }
+
+
+        .cv-link {
+            margin-top: 20px;
+        }
+
+        .cv-link a {
+            color: #ffcc00;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid #ffcc00;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .cv-link a:hover {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2e2b5f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="/static/picture3.webp" alt="Mandi Tech Logo">
+        <h1>About Mandi Tech</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('contacts') }}">Contacts</a>
+            <a href="{{ url_for('history') }}">History</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Section 1: Introduction -->
+        <section class="intro">
+            <div class="text">
+                <h2>Who We Are</h2>
+                <p>Mandi Tech is a forward-thinking company specializing in electrical and computer engineering solutions. Our focus is on leveraging cutting-edge technology to develop innovative solutions that address real-world challenges across diverse industries.</p>
+            </div>
+            <div class="image-section">
+                <img src="/static/picture1.jpeg" alt="Mandi Tech Overview" />
+            </div>
+        </section>
+
+        <!-- Section 2: Our History -->
+        <section class="history">
+            <div class="image-section">
+                <img src="/static/picture4.jpg" alt="Historical Project" />
+            </div>
+            <div class="text">
+                <h2>Our History</h2>
+                <p>Founded in 2020, Mandi Tech emerged with a vision to redefine the intersection of engineering and technology. Since our inception, we've grown rapidly, executing a wide range of projects that make a meaningful impact in the fields of electrical and computer systems.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Our Vision -->
+        <section class="vision">
+            <div class="text">
+                <h2>Our Vision</h2>
+                <p>We envision a world where technology bridges gaps and empowers communities. At Mandi Tech, we are dedicated to creating smarter, more sustainable solutions that help businesses thrive in an ever-evolving digital landscape.</p>
+            </div>
+            <div class="image-section">
+                <img src="/static/picture5.jpg" alt="Vision of the Future" />
+            </div>
+        </section>
+
+        <!-- Section 4: Our Team and Mission -->
+        <section class="team">
+            <div class="image-section">
+                <img src="/static/picture1.webp" alt="Our Team" />
+            </div>
+            <div class="text">
+                <h2>My Team</h2>
+                <p>My team is made up of highly skilled engineer and professional as of now. but maybe later i wll share with engineers who share a passion for developing technology solutions that make a tangible difference. With diverse expertise and innovative thinking, I work collectively to solve challenges and push the boundaries of what's possible.</p>
+                <h3>Mission</h3>
+                <p>My mission is simple: to design and deliver electrical and computer engineering solutions that help My clients achieve their goals and improve the quality of life through technology.</p>
+                <div class="cv-link">
+                    <a href="/static/Edwin_Mandi_CV.pdf" target="_blank">Download My CV</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Mandi Tech. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

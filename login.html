@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #000; /* Black background for the box */
+            color: #ffd700; /* Gold color for text */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 320px;
+            text-align: center;
+            border: 3px solid red; /* Red border */
+            z-index: 1; /* Ensure the container is on top */
+        }
+
+        .welcome-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #ffd700; /* Gold color */
+            font-weight: bold;
+        }
+
+        .login-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffd700; /* Gold */
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ffd700; /* Gold border */
+            border-radius: 5px;
+            background-color: #333; /* Dark background for input */
+            color: white; /* White text */
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ffd700; /* Gold */
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-container button:hover {
+            background-color: #b8860b; /* Darker Gold */
+        }
+
+        .flash-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #1e90ff; /* Blue */
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        /* Visually hide labels */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="welcome-title">Welcome to Mandi Tech</div>
+
+        <h1>Login</h1>
+
+        <!-- Flash messages (Success or Error) -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash-message" style="color: {% if category == 'success' %}green{% else %}red{% endif %};">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Login Form -->
+        <form method="POST" action="{{ url_for('login') }}">
+            <!-- Email input with associated label -->
+            <label for="email" class="sr-only">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+            <!-- Password input with associated label -->
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Forgot password link -->
+        <div class="forgot-password">
+            <a href="{{ url_for('forgot_password') }}">Forgot Password?</a>
+        </div>
+    </div>
+</body>
+</html>

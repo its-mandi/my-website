@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandi Tech - Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/picture1.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Smooth Font Transition */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body, h1, h2, h3, h4, p {
+            font-family: 'Poppins', sans-serif; /* New font style */
+        }
+
+        header {
+            background-color: rgba(12, 12, 12, 0.8);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            max-width: 900px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .container img {
+            max-width: 45%;
+            border-radius: 10px;
+        }
+
+        .content {
+            max-width: 50%;
+            padding: 20px;
+            animation: colorTransition 12s infinite; /* Apply animation */
+        }
+
+        .cv {
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Smooth color transition animation */
+        @keyframes colorTransition {
+            0% { color: red; }
+            25% { color: green; }
+            50% { color: blue; }
+            75% { color: black; }
+            100% { color: red; }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mandi Tech</h1>
+        <nav>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('contacts') }}">Contacts</a>
+            <a href="{{ url_for('history') }}">History</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to Mandi Tech!</h2>
+        <p>Your trusted partner in electrical and computer engineering solutions.</p>
+
+        <div class="container">
+            <div class="content">
+                <h3>Who I Am</h3>
+                <p>Hey there! I'm Edwin Mandi, an engineer who's all about electrical and computer systems. I've got a knack for designing and rolling out innovative solutions, and my goal is to use technology to make a real difference in all sorts of industries. Let's make some tech magic happen, shall we?</p>
+                <div class="cv">
+                    <h4>Curriculum Vitae</h4>
+                    <p><a href="/static/Edwin_Mandi_CV.pdf" target="_blank">Click here to download my CV</a></p>
+                </div>
+            </div>
+            <img src="/static/picture2.jpeg" alt="Mandi Tech Image">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mandi Tech. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
